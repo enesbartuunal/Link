@@ -3,15 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32519.111
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Link.Api", "Link.Api\Link.Api.csproj", "{ADA988D0-1258-489D-8A4A-451B989C767D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Link.Api", "Link.Api\Link.Api.csproj", "{ADA988D0-1258-489D-8A4A-451B989C767D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Link.DataAccess", "Link.DataAccess\Link.DataAccess.csproj", "{93C0BBEE-E59A-4E67-9250-654C1EF1CECF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Link.DataAccess", "Link.DataAccess\Link.DataAccess.csproj", "{93C0BBEE-E59A-4E67-9250-654C1EF1CECF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Link.Business", "Link.Business\Link.Business.csproj", "{17EA3084-CA4D-4305-91EC-F4DD524A5199}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Link.Business", "Link.Business\Link.Business.csproj", "{17EA3084-CA4D-4305-91EC-F4DD524A5199}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Link.Common", "Link.Common\Link.Common.csproj", "{314B93ED-A32B-4F9E-AB75-086AA8A2F879}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Link.Core", "Link.App\Link.Core.csproj", "{7755DBA8-F280-4D9D-8C4E-438D87FBBFAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Link.Core", "Link.App\Link.Core.csproj", "{7755DBA8-F280-4D9D-8C4E-438D87FBBFAE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,10 +29,6 @@ Global
 		{17EA3084-CA4D-4305-91EC-F4DD524A5199}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17EA3084-CA4D-4305-91EC-F4DD524A5199}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17EA3084-CA4D-4305-91EC-F4DD524A5199}.Release|Any CPU.Build.0 = Release|Any CPU
-		{314B93ED-A32B-4F9E-AB75-086AA8A2F879}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{314B93ED-A32B-4F9E-AB75-086AA8A2F879}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{314B93ED-A32B-4F9E-AB75-086AA8A2F879}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{314B93ED-A32B-4F9E-AB75-086AA8A2F879}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7755DBA8-F280-4D9D-8C4E-438D87FBBFAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7755DBA8-F280-4D9D-8C4E-438D87FBBFAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7755DBA8-F280-4D9D-8C4E-438D87FBBFAE}.Release|Any CPU.ActiveCfg = Release|Any CPU

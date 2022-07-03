@@ -44,7 +44,7 @@ namespace Link.Core.Utilities.Email
         public Mailer(IConfiguration configuration)
         {
             Configuration = configuration;
-            _smtpSettings = Configuration.GetSection("SmtpSettings").;
+            _smtpSettings = Configuration.GetSection("SmtpSettings").Get<SmtpSettings>();
         }
 
 

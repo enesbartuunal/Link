@@ -1,9 +1,9 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Linq;
 using System.Text;
 
-namespace Setre.Titan.Core.Utilities.Images
-{
+namespace Link.Core.Utilities.Images{
     public class WriterHelper
     {
         public enum ImageFormat
@@ -15,7 +15,17 @@ namespace Setre.Titan.Core.Utilities.Images
             png,
             unknown
         }
+        public static bool CheckIfImageFile(IFormFile file)
+        {
+            byte[] fileBytes;
+            using (var ms = new MemoryStream())
+            {
+                file.CopyTo(ms);
+                fileBytes = ms.ToArray();
+            }
 
+            return WriterHelper.GetImageFormat(fileBytes) != WriterHelper.ImageFormat.unknown;
+        }
         public static ImageFormat GetImageFormat(byte[] bytes)
         {
             var bmp = Encoding.ASCII.GetBytes("BM");     // BMP
