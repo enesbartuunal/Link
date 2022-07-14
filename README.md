@@ -261,13 +261,16 @@ builder.Services.AddAuthorization(options =>
 
 =>**Kaydedilen müşteri fotoğraflarına watermark(filigran) eklenecektir.**
 + Bu işlem için bir worker service oluşturuldu.Bağımsız çalışma için MassTransit kullanıldı.RabbitMq MassTransit kütüphanesi  kullanılarak resimlere watermark eklenip tekrar wwwRoot/Watermark adresine kayıt işlemi gerçekleştirildi.
-
+------------
 =>**Aynı telefon numarasına sahip ama farklı isim ile kaydedilmiş müşterilerin tesbit edilmesi.**
-=>**Aylık olarak email yoluyla  hangi şehirde kaç tane müşteri olduğu raporlancak.**
+=>**Aylık olarak email yoluyla  hangi şehirde kaç tane müşteri olduğu raporlancak.**	
+
 =>**Haftalık olarak en fazla tiraci faliyete sahip ilk 5  müşteri  email yoluyla raporlanacak. Bu rapor admin rolune sahip olanlara =>gönderilecektir.**
+
 =>**Rapor'lar excel formatında olacak**
-	+  Raporlamada Quartz kütüphanesi kullanıldı.
-	+Raporlama sureleri Program.cs altında Crone ile tanımlandı.
+
+	+ Raporlamada Quartz kütüphanesi kullanıldı.
+	+	Raporlama sureleri Program.cs altında Crone ile tanımlandı.
 	+ Api katmanında Job klosörü altına istenilen tüm joblar tanımlandı.
 	+ Joblar sonuçları excel formatında olup, excel dönüşümü için ClosedXML kütüphanesi kullanıldı.
 	+ Mail gönderimi için MailKit kütüphanesi kullanıldı.
