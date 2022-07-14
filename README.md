@@ -58,9 +58,10 @@ namespace Link.DataAccess.Entities
  + Bu işlemler  Business katmanları içerisinde yapılamaktadır.
     + Crud işlemleri için Base klosorü içerisinde servis oluşturuldu.
     + Crud işlemleri dışında CustomerService'e farklı özellikler kazandırıldı.(AddFile,GetFile)
+    
     ```csharp
-public class CustomerService : ServiceAbstractBase<Customer, CustomerDto>, ICustomerService
-    {
+	public class CustomerService : ServiceAbstractBase<Customer, CustomerDto>, ICustomerService
+   	 {
         private readonly IHostingEnvironment _environment;
         private readonly ISendEndpointProvider _sendEndpointProvider;
         public CustomerService(AppDbContext db, IMapper mapper, IHostingEnvironment environment,ISendEndpointProvider sendEndpointProvider) : base(db, mapper)
