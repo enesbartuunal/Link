@@ -14,7 +14,7 @@ namespace Link.DataAccess.Entities
         public string Email { get; set; }
         public string ImagePath { get; set; }
         public string Phone { get; set; }
-        public string Şehir { get; set; }
+        public string City { get; set; }
 
         //Relations
         public ICollection<CustomerActivity> CustomerActivities { get; set; }

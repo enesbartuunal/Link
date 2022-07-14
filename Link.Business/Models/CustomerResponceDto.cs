@@ -16,6 +16,6 @@ namespace Link.Business.Models
         public string Email { get; set; }
         public FileContentResult Image { get; set; }
         public string Phone { get; set; }
-        public string Şehir { get; set; }
+        public string City { get; set; }
     }
 }

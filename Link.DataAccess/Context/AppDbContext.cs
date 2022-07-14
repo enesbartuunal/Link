@@ -25,9 +25,11 @@ namespace Link.DataAccess.Context
         public DbSet<Customer> Customers { get; set; }
         public DbSet<CustomerActivity> CustomorActivities { get; set; }
 
+        public DbSet<Report> Reports { get; set; }
+
 
         //Migration sırasında yorum satırı olması gereken proplar
-        public DbSet<HowManyCustomersInWhichCityModel> HowManyCustomersInWhichCityModels { get; set; }
+        //public DbSet<HowManyCustomersInWhichCityModel> HowManyCustomersInWhichCityModels { get; set; }
         public override int SaveChanges()
         {
             _httpContextAccessor = ServiceTool.ServiceProvider.GetService<IHttpContextAccessor>();

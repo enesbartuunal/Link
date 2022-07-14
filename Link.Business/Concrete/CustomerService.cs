@@ -6,6 +6,7 @@ using Link.Core.Utilities.Images;
 using Link.Core.Utilities.Results;
 using Link.DataAccess.Context;
 using Link.DataAccess.Entities;
+using MassTransit;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.StaticFiles;
@@ -20,9 +21,11 @@ namespace Link.Business.Concrete
     public class CustomerService : ServiceAbstractBase<Customer, CustomerDto>, ICustomerService
     {
         private readonly IHostingEnvironment _environment;
-        public CustomerService(AppDbContext db, IMapper mapper, IHostingEnvironment environment) : base(db, mapper)
+        private readonly ISendEndpointProvider _sendEndpointProvider;
+        public CustomerService(AppDbContext db, IMapper mapper, IHostingEnvironment environment,ISendEndpointProvider sendEndpointProvider) : base(db, mapper)
         {
             _environment = environment;
+            _sendEndpointProvider = sendEndpointProvider;
         }
 
         public async Task<Result<string>> AddFile(IFormFile file)
@@ -37,6 +40,11 @@ namespace Link.Business.Concrete
                     var path = Path.Combine(_environment.ContentRootPath, "wwwroot/Uploads/" + fileName);
                     using var stream = new FileStream(path, FileMode.Create);
                     await file.CopyToAsync(stream);
+                    //For WaterMark(Worker Service)
+                    var sendEndpoint = await _sendEndpointProvider.GetSendEndpoint(new Uri("queue:addwatermark"));
+                    var waterMarkDto=new WaterMarkDto() { fileName=fileName,hostAdress=_environment.ContentRootPath};
+                    await sendEndpoint.Send<WaterMarkDto>(waterMarkDto);    
+                    //
                     return new Result<string>(true, ResultConstant.RecordCreateSuccessfully, fileName);
                 }
                 return new Result<string>(false, ResultConstant.RecordCreateNotSuccessfully);

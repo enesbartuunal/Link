@@ -40,7 +40,7 @@ namespace Link.Api.Controllers
                         Name = item.Name,
                         Phone = item.Phone,
                         SurName = item.SurName,
-                        Şehir = item.Şehir,
+                        City = item.City,
                         Image = file,
                     };
                     customerResponceList.Add(member);
@@ -73,7 +73,7 @@ namespace Link.Api.Controllers
                     Name = data.Data.Name,
                     Phone = data.Data.Phone,
                     SurName = data.Data.SurName,
-                    Şehir = data.Data.Şehir,
+                    City = data.Data.City,
                     Image = file,
                 };
                 return Ok(member);
@@ -96,7 +96,7 @@ namespace Link.Api.Controllers
                     Name = data.Data.Name,
                     Phone = data.Data.Phone,
                     SurName = data.Data.SurName,
-                    Şehir = data.Data.Şehir,
+                    City = data.Data.City,
                     Image = file,
                 };
                 return Ok(member);
@@ -121,7 +121,7 @@ namespace Link.Api.Controllers
                         Email = model.Email,
                         Phone = model.Phone,
                         SurName = model.SurName,
-                        Şehir = model.Şehir,
+                        City = model.City,
                         ImagePath = result.Data,
                     };
                     var result_2 = await _customerService.Add(data);
@@ -151,7 +151,7 @@ namespace Link.Api.Controllers
                         Email = model.Email,
                         Phone = model.Phone,
                         SurName = model.SurName,
-                        Şehir = model.Şehir,
+                        City = model.City,
                         ImagePath = result.Data,
                     };
                     var result_2 = await _customerService.Update(data);
