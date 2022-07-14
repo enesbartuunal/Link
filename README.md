@@ -264,6 +264,7 @@ builder.Services.AddAuthorization(options =>
 
 ------------
 
+
 =>**	Aynı telefon numarasına sahip ama farklı isim ile kaydedilmiş müşterilerin tesbit edilmesi.**
 =>**	Aylık olarak email yoluyla  hangi şehirde kaç tane müşteri olduğu raporlancak.**
 =>**	Haftalık olarak en fazla tiraci faliyete sahip ilk 5  müşteri  email yoluyla raporlanacak. Bu rapor admin rolune sahip olanlara =>gönderilecektir.**
