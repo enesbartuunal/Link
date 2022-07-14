@@ -227,11 +227,12 @@ namespace Link.DataAccess.Entities
             }
         }
     }
-```
-=>**•	Admin rol, tüm işlemleri gerçekleştirebilecek.
-=>•	Editor rol  ise sadece kaydetme,güncelleme ve listeleme işlemlerini gerçekleştirebilecek.
+	```
+=>**	Admin rol, tüm işlemleri gerçekleştirebilecek.
+=>Editor rol  ise sadece kaydetme,güncelleme ve listeleme işlemlerini gerçekleştirebilecek.
 **
 + Bu işlem için bir Policy oluşturuldu ve metotlara bu policy  tanımlandı.
+
 ```csharp
 builder.Services.AddAuthorization(options =>
 {
@@ -239,6 +240,7 @@ builder.Services.AddAuthorization(options =>
          policy => policy.RequireRole("Admin"));
 });
 ```
+
 ```csharp
 [HttpDelete("{id}")]
         [Authorize(Policy = "RequireAdminRole")]
@@ -264,8 +266,8 @@ builder.Services.AddAuthorization(options =>
 
 =>**	Aynı telefon numarasına sahip ama farklı isim ile kaydedilmiş müşterilerin tesbit edilmesi.**
 =>**	Aylık olarak email yoluyla  hangi şehirde kaç tane müşteri olduğu raporlancak.**
-**=>	Haftalık olarak en fazla tiraci faliyete sahip ilk 5  müşteri  email yoluyla raporlanacak. Bu rapor admin rolune sahip olanlara =>gönderilecektir.
-=>	Rapor'lar excel formatında olacak**
+=>**	Haftalık olarak en fazla tiraci faliyete sahip ilk 5  müşteri  email yoluyla raporlanacak. Bu rapor admin rolune sahip olanlara =>gönderilecektir.**
+=>**	Rapor'lar excel formatında olacak**
 	+  Raporlamada Quartz kütüphanesi kullanıldı.
 	+Raporlama sureleri Program.cs altında Crone ile tanımlandı.
 	+ Api katmanında Job klosörü altına istenilen tüm joblar tanımlandı.
@@ -339,6 +341,7 @@ public class HowManyCustomersInWhichCityJob : IJob
         }
     }
 ```
+
 ```csharp
   public class WeeklyReportJob : IJob
     {
@@ -387,6 +390,7 @@ public class HowManyCustomersInWhichCityJob : IJob
         }
     }
 ```
+
 ```csharp
   public class SamePhoneNumbersJob : IJob
     {
