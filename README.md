@@ -21,8 +21,8 @@
 # Firma Beklentileri Hakında
 
 ------------
-=>**	Müşterinin isim,soy isim,email,fotograf,telefon ve şehir  bilgilerinin tutulması**
-=>**	Müşteri ile yapılan ticari faliyet bilgilerinin tutulması**
+=>**Müşterinin isim,soy isim,email,fotograf,telefon ve şehir  bilgilerinin tutulması**
+=>**Müşteri ile yapılan ticari faliyet bilgilerinin tutulması**
 
 ```csharp
 namespace Link.DataAccess.Entities
