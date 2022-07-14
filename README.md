@@ -156,8 +156,8 @@ namespace Link.DataAccess.Entities
     }
 	```
 
-=>**Rehbere kayıt gerçekleştirecek çalışanların farklı rollere sahip olması( Admin ve Editor Rolleri)
-=>**Admin,Editor isminde 2 tane rol tanımlamasının olması.
+=>**Rehbere kayıt gerçekleştirecek çalışanların farklı rollere sahip olması( Admin ve Editor Rolleri)**
+=>**Admin,Editor isminde 2 tane rol tanımlamasının olması.**
 
 + Bu işlem için Core katmanında Extension hazırlandı.
 
