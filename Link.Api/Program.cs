@@ -1,3 +1,4 @@
+using Link.Business.Concrete;
 using Link.Business.Jobs;
 using Link.DataAccess.Context;
 using Link.DataAccess.Entities;
@@ -51,6 +52,11 @@ builder.Services.AddAuthorization(options =>
     options.AddPolicy("RequireAdminRole",
          policy => policy.RequireRole("Admin"));
 });
+builder.Services.AddScoped<CustomerService>();
+builder.Services.AddScoped<TokenService>();
+builder.Services.AddScoped<AutService>();
+builder.Services.AddScoped<CustomerActivityService>();
+builder.Services.AddScoped<ReportService>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
